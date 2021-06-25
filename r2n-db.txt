@@ -1,0 +1,304 @@
+
+
+create table tbl_region(
+	region_id int(10) AUTO_INCREMENT,
+	region_name varchar(255) not null,
+	region_abbr varchar(255),
+	region_lat double not null,
+	region_lng double not null,
+	primary key(region_id));
+
+create table tbl_province(
+	province_id int(10) AUTO_INCREMENT,
+	province_name varchar(255) not null,
+	province_abbr varchar(255),
+	province_lat double not null,
+	province_lng double not null,
+	region_id int(10) not null,
+	primary key (province_id),
+	foreign key (region_id) references tbl_region(region_id));
+
+create table tbl_city_muni(
+	cm_id int(10) AUTO_INCREMENT,
+	cm_name varchar(255) not null,
+	cm_abbr varchar(255),
+	cm_lat double not null,
+	cm_lng double not null,
+	province_id int(10) not null,
+	primary key (cm_id),
+	foreign key (province_id) references tbl_province(province_id));
+
+create table tbl_barangay(
+	barangay_id int(10) AUTO_INCREMENT,
+	barangay_name varchar(255) not null,
+	barangay_abbr varchar(255),
+	barangay_lat double not null,
+	barangay_lng double not null,
+	cm_id int(10) not null,
+	primary key (barangay_id),
+	foreign key (cm_id) references tbl_city_muni(cm_id));
+
+create table tbl_zone(
+	zone_id int(10) AUTO_INCREMENT,
+	zone_name varchar(255) not null,
+	zone_abbr varchar(255),
+	zone_lat double,
+	zone_lng double,
+	barangay_id int(10) not null,
+	primary key(zone_id),
+	foreign key (barangay_id) references tbl_barangay(barangay_id));
+
+
+create table tbl_user(
+	user_id int(10) AUTO_INCREMENT,
+	user_name varchar(255) not null,
+	user_pass varchar(255) not null,
+	user_firstName varchar(255) not null,
+ 	user_middleName varchar(255),
+	user_lastName varchar(255) not null,
+	user_position varchar(255) not null,
+	user_affiliation varchar(255) not null,
+	user_type enum('0','1','2') not null,
+	user_status enum('Active','Inactive') default 'Active',
+	barangay_id int(10),
+	cm_id int(10),
+	primary key(user_id),
+	foreign key (barangay_id) references tbl_barangay(barangay_id),
+	foreign key (cm_id) references tbl_city_muni(cm_id)
+);
+
+create table tbl_health_condition(
+	hc_id int(10) AUTO_INCREMENT,
+	hc_name varchar(255) not null,
+	hc_abbr varchar(255) not null,
+	primary key(hc_id)
+);
+
+
+
+create table tbl_person(
+	person_id int(10) AUTO_INCREMENT,
+	person_firstName varchar(255) not null,
+	person_middleName varchar(255),
+	person_lastName varchar(255) not null,
+	person_birthdate date not null,
+	person_gender varchar(255) not null,
+	person_occupation varchar(255) not null,
+	person_vaccinated boolean not null,
+	person_economicStatus varchar(255) not null,
+	zone_id int(10) not null,
+	primary key(person_id),
+	foreign key(zone_id) references tbl_zone(zone_id)
+);
+
+create table tbl_person_health_condition(
+	phc_id int(10) AUTO_INCREMENT,
+	hc_id int(10) not null,
+	person_id int(10) not null,
+	primary key(phc_id),
+	foreign key (hc_id) references tbl_health_condition(hc_id),
+	foreign key (person_id) references tbl_person(person_id)	
+);
+
+create table tbl_criteria(
+	criteria_id int(10) AUTO_INCREMENT,
+	criteria_name varchar(255) not null,
+	criteria_description varchar(255),
+	primary key(criteria_id)
+);
+
+create table tbl_vaccine(
+	vaccine_id int(10) AUTO_INCREMENT,
+	vaccine_name varchar(255) not null,
+	vaccine_agegroup varchar(255) not null,
+	vaccine_shelflife int(10) not null,
+	primary key(vaccine_id)
+);
+
+create table tbl_vaccine_station(
+	vc_id int(10) AUTO_INCREMENT,
+	vc_name varchar(255) not null,
+	vc_type varchar(255) not null,
+	vc_capacity int(10) not null,
+	vc_lat varchar(255) not null,
+	vc_lng varchar(255) not null,
+	vc_street varchar(255),
+	barangay_id int(10) not null,
+	primary key(vc_id),
+	foreign key (barangay_id) references tbl_barangay(barangay_id)
+);
+
+create table tbl_vaccination_schedule(
+	vs_id int(10) AUTO_INCREMENT,
+	vs_startDate datetime not null,
+	vs_endDate datetime not null,
+	vaccine_id int(10) not null,
+	vc_id int(10) not null,
+	barangay_id int(10) not null,
+	primary key(vs_id),
+	foreign key (vaccine_id) references tbl_vaccine(vaccine_id),
+	foreign key (vc_id) references tbl_vaccine_station(vc_id),
+	foreign key (barangay_id) references tbl_barangay(barangay_id)			
+);
+
+create table tbl_vaccination_schedule_list(
+	vsl_id int(10) AUTO_INCREMENT,
+	vsl_time datetime not null,
+	person_id int(10) not null,	
+	vs_id int(10) not null,
+	primary key(vsl_id),
+	foreign key (vs_id) references tbl_vaccination_schedule(vs_id),
+	foreign key (person_id) references tbl_person(person_id)		
+);									
+
+insert into tbl_criteria(criteria_name) values ('Criteria A'),('Criteria B'),('Criteria C'),('Criteria D');
+insert into tbl_vaccine(vaccine_name) values ('Brand A'),('Brand B'),('Brand C'),('Brand D');
+insert into tbl_region(region_name,region_abbr,region_lat,region_lng) values ("Region X","10",8.020163,124.685651);
+insert into tbl_province(province_name,province_abbr,province_lat,province_lng,region_id) values ("Misamis Oriental","",8.504556,124.621959,1);
+insert into tbl_city_muni(cm_name,cm_abbr,cm_lat,cm_lng,province_id) values ("Cagayan de Oro","CDO",8.477217,124.64592,1);
+insert into tbl_barangay(barangay_name,barangay_abbr,barangay_lat,barangay_lng,cm_id) values ("Bonbon","",8.5049,124.6489,1),
+("Bulua","",8.5091,124.6177,1),
+("Carmen","",8.4778,124.6313,1),
+("Lumbia","",8.4145,124.5904,1),
+("Puerto","",8.4678,124.794,1),
+("Gusa","",8.5008092,124.7469348,1),
+("Barangay 20","",8.4857396,124.64508,1),
+("Barangay 36","",8.3824627,124.4926362,1),
+("Kauswagan","",8.5000239,124.7463942,1);
+
+
+insert into tbl_zone(zone_name,zone_abbr,zone_lat,zone_lng,barangay_id) values ("1","",8.4860543,124.7101302,1),
+("5","",8.5000176,124.6785416,1),
+("7","",8.6614038,124.189499,1),
+("2","",8.4845657,124.6798534,2),
+("4","",8.4845626,124.6798534,2),
+("6","",8.4845594,124.6798533,2),
+("4","",8.3824627,124.4926362,3),
+("5","",8.4704923,124.6158618,3),
+("6","",8.4704924,124.6224279,3),
+("3","",8.3824627,124.4926362,4),
+("5","",8.3824627,124.4926362,4),
+("7","",8.3824627,124.4926362,4),
+("1","",8.5000239,124.7463942,5),
+("2","",8.5017083,124.7475723,5),
+("3","",8.4849175,124.6805869,5),
+("8","",8.4790476,124.6705751,6),
+("1","",8.3824627,124.4926362,7),
+("1","",8.4756089,124.6527242,8),
+("8","",8.481509,124.6255553,3),
+("5","",8.4982617,124.6282809,9);
+
+
+insert into tbl_person(person_firstName,person_middleName,person_lastName,person_birthdate,person_gender,person_occupation,person_vaccinated,person_economicStatus,zone_id) values
+("Sam","Casio","Esmile","1996-11-30","F","None","None","32",1),
+("Jestoni","Alcantara","Manalo","1960-06-27","M","Teacher","None","32",1),
+("Jun","Tan","Neri","1963-04-15","M","Fisherman","None","32",1),
+("Vicente","Rabadon","Meneses","1975-08-16","M","Teacher","None","32",1),
+("Wilfredo","Gales","Avelino","1985-04-17","M","Driver","None","32",1),
+("Mary","Quinlaog","Liwanag","1981-09-21","F","Teacher","None","32",1),
+("Marcky","Lopez","Abejay","1992-08-31","M","Teacher","None","32",2),
+("Mika","Galang","Colanse","2003-02-14","F","Teacher","None","32",2),
+("Juvelyn","Daquis","Locsin","2002-02-06","F","Student","None","32",2),
+("Harlou","Lee","Enterina","1966-01-30","M","Factory Worker","None","32",2),
+("Judalyn","Mogtoc","Namoco","1995-04-19","F","Call Center Agent","None","32",2),
+("Remmy","Orion","Abecia","1994-05-23","F","Call Center Agent","None","32",2),
+("Claro","Gumapon","Novo","1983-12-01","M","Factory Worker","None","32",2),
+("Nana","Juanico","Pabatao","1934-11-25","F","None","None","32",2),
+("Zandro","Gomez","Aguilar","1992-02-25","M","Teacher","None","32",3),
+("Solenn","Jamisola","Babunas","2001-05-31","F","Student","None","32",3),
+("Topher","Go","Baconguis","1999-06-25","M","Teacher","None","32",3),
+("Winston","Dagcuta","Guttierez","1945-04-21","M","None","None","32",3),
+("Mark John","Topaz","Yu","1992-06-19","M","Factory Worker","None","32",3),
+("Ian","Macas","Lago","1984-10-09","M","Factory Worker","None","32",3),
+("Shiyutchi","Cahoy","Obrador","1987-03-13","M","Teacher","None","32",4),
+("Kim","Dimaculangan","Valdez","1942-06-20","F","None","None","32",4),
+("Kenneth","Dumangcas","Gonzales","1969-07-18","M","Teacher","None","32",4),
+("Concita","Orios","Monredondo","1993-10-25","F","Factory Worker","None","32",4),
+("Jollibee","Duat","Hilario","1962-10-10","F","None","None","32",4),
+("McDonald","David","Navarro","1950-02-17","M","None","None","32",4),
+("Jocelyn","Smith","Jimenez","1955-02-15","F","None","None","32",4),
+("JM","Esclamado","Cabana","1958-12-26","M","Vendor","None","32",5),
+("Cleah","Tapal","Acain","1978-05-29","F","Food Chain Crew","None","32",5),
+("Amanda","de los Reyes","Jaena","1997-07-31","F","Student","None","32",5),
+("Cecilia","Duminguez","Oguis","1972-03-02","F","Teacher","None","32",5),
+("Sanya","Kiaton","Fedillaga","1991-09-27","F","Call Center Agent","None","32",5),
+("Amonia","Sy","Chiu","1990-11-22","F","Factory Worker","None","32",5),
+("Paolo","Sotto","Equipelag","1933-09-15","M","None","None","32",5),
+("Marianne","Gomez","Donina","1979-07-22","F","None","None","32",6),
+("Heaven","Bondoc","Ballesteros","1943-10-01","F","None","None","32",6),
+("Chalo","Montevilla","Infante","1938-02-12","M","None","None","32",6),
+("Ricardo","Ricardo Casas","Bayola","1970-01-16","M","Carpenter","None","32",6),
+("Wilma","Cervantes","Arojo","1985-08-25","F","Factory Worker","None","32",6),
+("Pipoy","Caamino","Minerva","1954-03-01","M","None","None","32",6),
+("John","Pailagao","Cabrillos","1946-05-01","M","None","None","32",7),
+("Angielyn","Caamino","Padilla","1994-10-30","F","None","None","32",7),
+("Jeazelle","Lopez","Labiscase","1939-11-11","F","None","None","32",7),
+("Michelle","Dario","Go","1997-11-28","F","Student","None","32",7),
+("Celia","Kho","Cuarteros","1947-11-15","F","None","None","32",7),
+("Cleofe","Magda","Panganiban","1951-07-22","F","None","None","32",7),
+("Allan","Hilario","Maceda","1956-10-11","M","None","None","32",7),
+("Chloe Marie","Reyes","Bernardo","2002-01-01","F","Student","None","32",8),
+("Aiza","Fajardo","Maldepena","1967-02-28","F","Factory Worker","None","32",8),
+("Mikaela","Fernandez","Perez","1971-11-05","F","None","None","32",8),
+("Nenita","Cagas","Magdangal","1989-12-29","F","Teacher","None","32",8),
+("Raymor","Monredondo","Pepito","1988-07-05","M","Teacher","None","32",8),
+("Rommel","Khan","Caballero","1977-12-05","M","Teacher","None","32",8),
+("Ricky","Tuslok","Padera","1976-04-18","M","Factory Worker","None","32",9),
+("Raymond","Cailing","Salgados","1998-01-28","M","Student","None","32",9),
+("Liza","Bakangitch","Sombrio","2002-06-20","F","Student","None","32",9),
+("Clark","Baillo","Gonzales","1972-02-03","M","Teacher","None","32",9),
+("Khail","Dumaog","Ohay","1952-03-27","M","Factory Worker","None","32",9),
+("Sergio","Mar","Ang","1958-06-16","M","None","None","32",9),
+("Anne","Tibay","Sabud","1932-05-19","F","None","None","32",9),
+("Godofredo","Amarga","Piloton","1955-11-27","M","Vendor","None","32",10),
+("Ara","Valdez","Samson","1967-03-31","F","None","None","32",10),
+("Rachel","Maizo","Alonzo","1941-09-21","F","None","None","32",10),
+("Raymundo","Tan","Dumangcas","1974-02-22","M","Carpenter","None","32",10),
+("Norgen","Baguio","Revillame","1959-05-23","M","None","None","32",10),
+("Buddy","Gomez","Nob","1936-07-21","M","None","None","32",10),
+("Pimchar","Castillo","Calam","1999-08-12","M","Student","None","32",11),
+("Mario","Cempron","Valduhueza","1983-03-21","M","Factory Worker","None","32",11),
+("Raymond","Reid","Lustre","1998-08-17","M","Student","None","32",11),
+("Sandra","Gumabao","Lim","1948-10-15","F","None","None","32",11),
+("Juvelyn","Orquias","Torres","1964-05-06","F","None","None","32",11),
+("Jose","Edmilao","Cabanero","1982-01-03","M","Nurse","None","32",11),
+("Lian","Derecho","Booc","1957-11-02","F","None","None","32",11),
+("Kathryn","Namalata","Paden","1998-05-30","F","Student","None","32",12),
+("Mark","De Guzman","Evangelista","1956-11-15","M","None","None","32",12),
+("Ronald","Obrador","Casio","2001-09-23","M","Student","None","32",12),
+("Fritzie","Gulaman","Vallar","1996-10-15","F","Factory Worker","None","32",12),
+("Nardo","Cagadas","Carambias","1961-12-25","M","Teacher","None","32",12),
+("Robert","Cuay","Pascual","1953-01-23","M","None","None","32",12),
+("Karell Marie","Dantes","Abrogar","1979-11-22","F","Security Guard","None","32",12),
+("Vincent","Enanod","Limoran","2003-01-24","M","Student","None","32",13),
+("Jessie","de Guzman","Mendoza","1968-03-19","M","Teacher","None","32",13),
+("Ray","Bulnayog","Butil","01/27/1074","M","None","None","32",13),
+("Felipa","Davila","Saludares","1973-01-04","F","Vendor","None","32",13),
+("Rhean","Manansala","Serad","1935-04-28","F","None","None","32",13),
+("Karla","Viceral","Acenas","1978-06-27","F","Factory Worker","None","32",13),
+("Fritz","Dumaog","Alfante","1956-11-19","M","Vendor","None","32",14),
+("Angel","Gabaan","Bacalso","1988-05-25","F","Factory Worker","None","32",14),
+("Selina","Baoy","Gabitano","1965-06-01","F","Sales Lady","None","32",14),
+("Bryan","Dagdag","Richards","1943-07-05","M","None","None","32",14),
+("Fe","Lungkat","Bartolome","1937-06-06","F","None","None","32",14),
+("David","Go","Luna","1949-04-09","M","None","None","32",14),
+("Jelyn","Jumamil","Quizon","1976-10-17","F","None","None","32",14),
+("Vic","Ballesteros","Ucang","1980-07-15","M","Teacher","None","32",14),
+("Rhea","De Maano","Sotto","1999-07-30","F","Student","None","32",15),
+("Heart","Balaba","Abendanio","1974-10-16","F","Teacher","None","32",15),
+("Lea","Salcedo","Rivera","2000-07-07","F","None","None","32",15),
+("Rizaldy","Hatosa","Yapit","1948-05-23","M","None","None","32",15),
+("Perla","Labita","Mohammad","1960-08-24","F","None","None","32",15),
+("Andrei","Aguilar","Ali","1986-03-16","F","Online Seller","None","32",15);
+
+insert into tbl_vaccine_station(vc_name,vc_type,vc_lat,vc_lng,vc_capacity,barangay_id) values
+("Capitol University Medical Center","Hospital",8.4790476,124.6705751,20,6),
+("Cagayan de Oro Medical Center","Hospital",8.3824627,124.4926362,30,7),
+("Maria Reyna - Xavier University Hospital Inc.","Hospital",8.4756089,124.6527242,20,8),
+("J.R. Borja General Hospital","Hospital",8.481509,124.6255553,30,3),
+("Cagayan de Oro Polymedic Medical Plaza","Hospital",8.4982617,124.6282809,30,9);
+
+
+
+
+							
