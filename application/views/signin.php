@@ -43,7 +43,7 @@
                     </a>
                 </div>
                 <div class="login-form">
-                    <form method="POST" action="<?=base_url()?>main_c/login">
+                    <form method="POST" action="<?=base_url()?>Main_C/login">
                         <div class="form-group">
                             <label>Username</label>
                             <input type="text" class="form-control" placeholder="Username" name="user_name">

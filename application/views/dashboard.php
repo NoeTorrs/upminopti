@@ -1,6 +1,6 @@
 
 <div class="col-6 m-0 p-0">
-        <a type="button" class="col-12" id="ch1" href="<?=base_url()?>main_c/openvs">
+        <a type="button" class="col-12" id="ch1" href="<?=base_url()?>Main_C/openvs">
         <div type="button" class="card text-white bg-flat-color-1">
             <div class="card-body cardcustom">
                 <div class="col-6">
@@ -14,7 +14,7 @@
         </a>    
     </div>
     <div class="col-6 m-0 p-0">
-        <a type="button" class="col-12" id="ch2" href="<?=base_url()?>main_c/setsched">
+        <a type="button" class="col-12" id="ch2" href="<?=base_url()?>Main_C/setsched">
         <div type="button" class="card text-white bg-flat-color-1">
             <div class="card-body cardcustom" >
                 <div class="col-6">
