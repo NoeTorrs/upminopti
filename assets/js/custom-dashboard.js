@@ -22,10 +22,10 @@
 		var fd = new FormData(this);
 
 		$.ajax({
-			type:"post",
-			url: location.origin+":5000/openvs",
+			type:"POST",
+			url:"http://3.7.151.73:5000/openvs",
 			data: fd,
-            contentType: false,
+    		contentType:false,
             processData: false,
             beforeSend: function(){
             	$('#btnopenvs').html(`<i class="fa fa-circle-o-notch fa-spin"></i> Processing`);
@@ -33,7 +33,7 @@
             },
 			success:function(response){
 				$(':input[type="submit"]').prop('disabled', false);
-				 if(response['open']=="Invalid Data"){
+				 if(response=="Invalid Data"){
 				 	swal({
 							title: "Invalid Excell File",
 							text: "Pls Download the File above for the correct format",
@@ -42,7 +42,7 @@
 						})
 				 	$('#openvsupload').val('');
 				 }
-				 else if (response['open']=="Blank Data"){
+				 else if (response=="Blank Data"){
 				 	swal({
 							title: "Invalid Excell File",
 							text: "The File Uploaded Contains 0 rows",

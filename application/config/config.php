@@ -39,7 +39,7 @@ else{
     $allowed_hosts = ['r2n.com', 'www.r2n.com'];
     $config['base_url'] = in_array($host, $allowed_hosts) ? $protocol.$host."/" : "we-do-not-recognise-this-host.com";
 } */
-$config['base_url'] = "https://3.7.151.73";
+$config['base_url'] = "http://3.7.151.73";
 
 
 /*
