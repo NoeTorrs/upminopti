@@ -233,20 +233,13 @@ var myStyles =[
         $vname = $(this).parent().parent().children().children('#vname').text();
         $vdate = $(this).parent().parent().children('#vdate').text();
         // console.log($bname);
-        console.log($vname);
-        $('#listlabel').html(`<h5>${$vname}</h5>`);
-        $.ajax({
-            type:"GET",
-            url: location.origin+"/r2n/main_c/getList?barangay_id="+$bid,
-            success:function(response){
-                $res = JSON.parse(response);
-                $text="";
-                for($i=0;$i<$res.length;$i++){
-                    $text+=`<div class="col-6">${$res[$i]['person_lastName']}, ${$res[$i]['person_firstName']} ${$res[$i]['person_middleName']}</div><div class="col-6">00:00 AM</div>`;
-                }
-                $('#listbody').html($text);
-            }
-        });
+        
+        // $res = JSON.parse(response);
+        // $text="";
+        // for($i=0;$i<$res.length;$i++){
+        //     $text+=`<div class="col-6">${$res[$i]['person_lastName']}, ${$res[$i]['person_firstName']} ${$res[$i]['person_middleName']}</div><div class="col-6">00:00 AM</div>`;
+        // }
+        // $('#listbody').html($text);
 
     })
     $(document).on('click','#btnShowResult',function(){

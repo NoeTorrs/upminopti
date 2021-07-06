@@ -129,7 +129,10 @@
                                     <div class="col-6">Name</div><div class="col-6">Schedule Time</div>
                                 </div>
                                 <div id="listbody">
-                                    
+                                    <div class="col-6">Ross Inquillo</div><div class="col-6">8:00 AM</div>
+                                    <div class="col-6">Zython Lachica</div><div class="col-6">8:00 AM</div>
+                                    <div class="col-6">Noe Jay Torres</div><div class="col-6">8:30 AM</div>
+                                    <div class="col-6">Raymond Pailagao</div><div class="col-6">8:30 AM</div>
                                 </div>
                             </div>
                             <div class="modal-footer">

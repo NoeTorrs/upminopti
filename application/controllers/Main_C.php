@@ -67,11 +67,9 @@ class Main_C extends CI_Controller {
 	}
 	public function setsched(){
 		
-			$data["criteria"] = $this->main_m->getCriteria();
-			$data["vaccine"] = $this->main_m->getVaccine();
 			// return var_dump($data["criteria"]);
 			$this->load->view('header');
-			$this->load->view('setschedule',$data);
+			$this->load->view('setschedule');
 			$this->load->view('footer');
 	}
 	public function schedule(){
@@ -79,17 +77,5 @@ class Main_C extends CI_Controller {
 		$this->load->view('schedule');
 		$this->load->view('footer');
 	}
-	public function getBarangay(){
-		$res = $this->main_m->getBarangay();
-		echo json_encode($res);
-	}
-	public function getStations(){
-		$res = $this->main_m->getStations();
-		echo json_encode($res);
-	}
-	public function getList(){
-		// echo json_encode();
-		$res = $this->main_m->getList($_GET['barangay_id']);
-		echo json_encode($res);
-	}
+
 }
