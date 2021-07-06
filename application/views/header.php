@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="<?=base_url()?>/assets/vendors/selectFX/css/cs-skin-elastic.css">
     <link rel="stylesheet" href="<?=base_url()?>/assets/vendors/jqvmap/dist/jqvmap.min.css">
 
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat">
+
     <link rel="stylesheet" href="<?=base_url()?>/assets/vendors/chosen/chosen.min.css">
 
     <link rel="stylesheet" href="<?=base_url()?>/assets/css/style.css">
@@ -35,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="<?=base_url()?>/assets/css/sweetalert2.min.css">
 </head>
 
-<body>
+<body style=" font-family: 'Montserrat' !important;font-size: 22px !important;">
 
 
     <!-- Left Panel -->

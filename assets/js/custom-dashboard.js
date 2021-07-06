@@ -77,11 +77,11 @@
 				 	}
 				 	for(i=0;i<open.length;i++){
 				 		totalcap = 0;
-				 		res+="<h5> Day "+(i+1)+": "+vc+" Vaccine Available</h5>";
+				 		res+="<h5><strong> Day "+(i+1)+": "+vc+" Vaccine Available </strong></h5>";
 				 		data = open[i];
 
 				 		console.log(data);
-				 		res += "<table class='table'><thead><th>Vaccine Stations to Open</th></thead><tbody>";
+				 		res += "<table class='table'><thead><th><h6>Vaccine Stations to Open</h6></th></thead><tbody>";
 				 		res += "<tr><td>";
 				 		for(x=0;x<data.length;x++){
 				 			res+=data[x][0]+",";
