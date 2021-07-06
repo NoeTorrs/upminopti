@@ -95,7 +95,7 @@
 
                             <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
 
-                            <a class="nav-link" href="<?=base_url()?>/main_c/logout" ><i class="fa fa-power-off"></i> Logout</a>
+                            <a class="nav-link" href="<?=base_url()?>/Main_C/logout" ><i class="fa fa-power-off"></i> Logout</a>
                         </div>
                     </div>
 

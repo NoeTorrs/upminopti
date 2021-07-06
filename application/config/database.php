@@ -75,10 +75,15 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
+<<<<<<< HEAD
 	'username' => 'root',
 	'password' => '',
 	'database' => 'ustpnicer',
+=======
+	'username' => 'upmin',
+	'password' => '@Upmin2021',
+	'database' => '',
+>>>>>>> 648cb2d732f2ed8312c7e4dcf1800d7af1366a4e
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
