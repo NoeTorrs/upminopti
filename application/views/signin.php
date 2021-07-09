@@ -39,7 +39,7 @@
             <div class="login-content">
                 <div class="login-logo" style="background-color:rgba(255,255,255,0.10);margin:0px;padding-bottom:5px"> 
                     <a href="index.html">
-                        <img class="align-content" src="<?=base_url()?>assets/images/logo.png" alt="" style="width:30%">
+                        <img class="align-content" src="<?=base_url()?>assets/images/logo.png" alt="" style="width:100%">
                     </a>
                 </div>
                 <div class="login-form">
