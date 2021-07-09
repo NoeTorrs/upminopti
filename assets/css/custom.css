@@ -6,7 +6,7 @@
 	white-space: nowrap;
 }
 .cardcustom{
-	border-style:dotted !important;
+	
 }
 .buttonload {
   background-color: #04AA6D; /* Green background */
@@ -15,3 +15,13 @@
   padding: 12px 16px; /* Some padding */
   font-size: 16px /* Set a font size */
 }
+
+.header-menu h2{
+	color: #00573f;
+}
+
+.card{
+	background-color: #00573f !important;
+	color:white !important;
+}
+

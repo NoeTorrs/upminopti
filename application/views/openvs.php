@@ -21,7 +21,7 @@
                             <div class="card-body card-block">
                                 <div>
                                     <h4><i>Download the Excell File below</i></h4>
-                                   <a href="<?=base_url()?>files/vs-format.xlsx" download style="color:green"><h4> <i class="fa fa-file-excel-o" aria-hidden="true" style="color:green"></i> vs-format.xlsx</h4></a>
+                                   <a href="<?=base_url()?>files/vs-format.xlsx" download style="color:#ffb81c"><h4> <i class="fa fa-file-excel-o" aria-hidden="true" style="color:#ffb81c"></i> vs-format.xlsx</h4></a>
                                 </div>
                             </div>
                             <hr/>

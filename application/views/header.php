@@ -40,33 +40,6 @@
 <body style=" font-family: 'Montserrat' !important;font-size: 22px !important;">
 
 
-    <!-- Left Panel -->
-
-    <!-- <aside id="left-panel" class="left-panel">
-        <nav class="navbar navbar-expand-sm navbar-default">
-
-            <div class="navbar-header">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fa fa-bars"></i>
-                </button>
-                <a class="" href="./dashboard"><img src="<?=base_url()?>/assets/images/logo.png" alt="Logo" style="width:50%"></a>     
-            </div>
-
-            <div id="main-menu" class="main-menu collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="./newschedule"> <i class="menu-icon fa fa-dashboard"></i>Set Schedule</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </aside> -->
-    <!-- /#left-panel -->
-
-    <!-- Left Panel -->
-
-    <!-- Right Panel -->
-
     <div id="right-panel" class="right-panel">
 
         <!-- Header-->
@@ -74,18 +47,18 @@
 
             <div class="header-menu">
 
-                <div class="col-sm-9">
+                <div class="col-sm-11">
                     <!-- <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a> -->
                     <a href="./dashboard">
-                        <img  class="pull-left col-1" src="<?=base_url()?>/assets/images/logo.png" alt="Logo" style="width:70%"><h2><strong style="color:yellow;text-shadow:2px 2px black">AMDABIDSS Health</strong> Recommendation System</h2>
+                        <div class="pull-left col-3"><img   src="<?=base_url()?>/assets/images/logo.png" alt="Logo" style="width:100%"></div><div class="col-8"><h2><strong>AMDABIDSS Health</strong> Vaccination Rollout </h2><span>Decision Support System</span></div>
                     </a>     
                     
                 </div>
 
-                <div class="col-sm-3">
+                <div class="col-sm-1 d-flex justify-content-center">
                     <div class="user-area dropdown loat-right">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="<?=base_url()?>/assets/images/admin.jpg" alt="User Avatar">
+                            <img class="user-avatar rounded-circle" src="<?=base_url()?>/assets/images/admin.jpg" alt="User Avatar" style="width:70%">
                         </a>
 
                         <div class="user-menu dropdown-menu">
