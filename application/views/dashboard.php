@@ -27,6 +27,10 @@
         </div>
         </a>    
     </div>
+            <div class="col-12 text-center" >
+                <img src="<?=base_url()?>assets/images/con2.png">
+                <br><small>More Features on-going</small>
+            </div>
 
 
 
