@@ -23,9 +23,7 @@
     <link rel="stylesheet" href="<?=base_url()?>/assets/vendors/selectFX/css/cs-skin-elastic.css">
     <link rel="stylesheet" href="<?=base_url()?>/assets/vendors/jqvmap/dist/jqvmap.min.css">
 
-
     <link rel="stylesheet" href="<?=base_url()?>/assets/css/style.css">
-
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
 </head>

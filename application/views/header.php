@@ -50,12 +50,20 @@
                 <div class="col-sm-11">
                     <!-- <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a> -->
                     <a href="./dashboard">
-                        <div class="pull-left col-3"><img   src="<?=base_url()?>/assets/images/logo.png" alt="Logo" style="width:100%"></div><div class="col-8"><h2><strong>AMDABIDSS Health</strong> Vaccination Rollout </h2><span>Decision Support System</span></div>
+                        <div class="col-sm-12 col-md-3">
+                            <img src="<?=base_url()?>/assets/images/logo.png" alt="Logo" style="width:100%">
+                        </div>
+                        <div class="text-center col-sm-12 col-md-8">
+                            <h2>
+                                <strong>AMDABIDSS Health</strong> Vaccination Rollout 
+                            </h2>
+                            <span>Decision Support System</span>
+                        </div>
                     </a>     
                     
                 </div>
 
-                <div class="col-sm-1 d-flex justify-content-center">
+                <div class="col-md-1 col-sm-12 d-flex justify-content-center">
                     <div class="user-area dropdown loat-right">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img class="user-avatar rounded-circle" src="<?=base_url()?>/assets/images/admin.jpg" alt="User Avatar" style="width:70%">

@@ -1,3 +1,7 @@
+body{
+	background-color: rgba(0,0,0,0.09);
+}
+
 .map-icon-label .map-icon {
 	font-size: 24px;
 	color: #FFFFFF;
@@ -5,9 +9,9 @@
 	text-align: center;
 	white-space: nowrap;
 }
-.cardcustom{
+/* .cardcustom{
 	
-}
+} */
 .buttonload {
   background-color: #04AA6D; /* Green background */
   border: none; /* Remove borders */
@@ -21,7 +25,32 @@
 }
 
 .card{
-	background-color: #00573f !important;
-	color:white !important;
+	/* background-color: #00573f !important; */
+	/* color:white !important; */
+	/* border-radius: 5%; */
+	/* margin: auto; */
+	 /* background-color: rgba(0, 87, 63, 0.8) */
+	width: 100%;
+	/* box-shadow: 3px 3px 3px grey; */
+	transition: 0.3s;
 }
 
+.card:hover{
+	box-shadow: 3px 3px 3px rgb(167, 167, 167);
+}
+
+.card .card-text{
+	color:rgb(48, 48, 48);
+	/* font-size: 1.2rem; */
+}
+
+
+.image{
+	/* width: 100%; */
+	height: 100%;
+}
+
+.btn{
+	border-radius: 5px;
+	color: white !important;
+}
