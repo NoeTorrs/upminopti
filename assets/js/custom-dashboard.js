@@ -35,7 +35,7 @@
 				$(':input[type="submit"]').prop('disabled', false);
 				 if(response=="Invalid Data"){
 				 	swal({
-							title: "Invalid Excell File",
+							title: "Invalid Excel File",
 							text: "Pls Download the File above for the correct format",
 							type: "error",
 							showConfirmButton:true
@@ -44,7 +44,7 @@
 				 }
 				 else if (response=="Blank Data"){
 				 	swal({
-							title: "Invalid Excell File",
+							title: "Invalid Excel File",
 							text: "The File Uploaded Contains 0 rows",
 							type: "error",
 							showConfirmButton:true

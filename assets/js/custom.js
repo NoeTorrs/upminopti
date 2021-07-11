@@ -371,7 +371,7 @@ var myStyles =[
                 $text+="</tr>";
             }
             if($("#ahp1").val()=="own"){
-            $text+='</tbody></table><div class="text-center col-12"><span>Choose Who is more important </span></div>';
+            $text+='</tbody></table><div class="text-center col-12"><span>Choose which is more important </span></div>';
             $cr=0;
             for($a=0;$a<crit.length;$a++){
                 for($b=$a+1;$b<crit.length;$b++){
