@@ -16,33 +16,31 @@
     <link rel="apple-touch-icon" href="apple-icon.png">
     <link rel="shortcut icon" href="<?=base_url()?>assets/images/logo-b.png">
 
-
     <link rel="stylesheet" href="<?=base_url()?>assets/vendors/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/vendors/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/vendors/themify-icons/css/themify-icons.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/vendors/flag-icon-css/css/flag-icon.min.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/vendors/selectFX/css/cs-skin-elastic.css">
 
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat">
+
     <link rel="stylesheet" href="<?=base_url()?>assets/css/style.css">
-
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-
-
+    <link rel="stylesheet" href="<?=base_url()?>assets/css/signincss.css">
 
 </head>
 
 <body class="bg-dark">
-
-
     <div class="sufee-login d-flex align-content-center flex-wrap">
-        <div class="container">
+         <div class="container">
             <div class="login-content">
-                <div class="login-logo p-2" style="background-color:rgba(255,255,255,0.10);margin:0px;"> 
-                    <a href="index.html">
+                <div class="login-logo p-2 mr-2 ml-2 pb-0" style="background-color:rgba(255,255,255,0.10); margin:0px;"> 
+                    <a>
                         <img class="align-content" src="<?=base_url()?>assets/images/logo.png" alt="" style="width:100%">
                     </a>
+                    <h2 class = "title"><strong>AMDABIDSS-HEALTH</strong></h2>
+                    <hr>
                 </div>
-                <div class="login-form">
+                <div class="login-form pt-1">
                     <form method="POST" action="<?=base_url()?>Main_C/login">
                         <div class="form-group">
                             <label>Username</label>
@@ -79,7 +77,7 @@
                     </form>
                 </div>
             </div>
-        </div>
+        </div> 
     </div>
 
 

@@ -107,7 +107,9 @@
 				 			vc-=totalcap;
 				 		}
 				 	}
-				 	$txt = `<p class="text-info">Vaccine name: ${$('#vcn').val()} </p><p class="text-info">Vaccine Amount: ${$('#vca').val()} doses </p><p class="text-info">Maximum Duration: ${$('#vcd').val()} days </p>`;
+					
+					$txt = `<h5 class = "text-center"><strong>SUMMARY</strong></h5><hr>`;
+				 	$txt += `<p class="text-info">Vaccine name: ${$('#vcn').val()} </p><p class="text-info">Vaccine Amount: ${$('#vca').val()} doses </p><p class="text-info">Maximum Duration: ${$('#vcd').val()} days </p>`;
 				 	$txt += "<table class='table table-striped'><thead><th>Vaccine Stations</th><th>Capacity</th></thead><tbody>";
 				 	for(i=0;i<table.length;i++){
 				 		$txt+= "<tr>"

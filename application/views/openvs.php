@@ -7,7 +7,7 @@
 
                         <div class="card">
                             <div class="card-header">
-                                <strong>Open Vaccine Stations</strong> <small></small>
+                                <h4><strong>OPEN VACCINE STATIONS</strong></h4> <small></small>
                             </div>
                             <div id="resultbtn" style="display:none">
                                 
@@ -20,7 +20,7 @@
                             <div id="inputview">
                             <div class="card-body card-block">
                                 <div>
-                                    <h4><strong><i>Download the Template below:</i></strong></h4>
+                                    <p class = "text-dark"><strong><i>Download the Template below:</i></strong></p>
                                    <a href="<?=base_url()?>files/vs-format.xlsx" download style="color:blue"><h4> <i class="fa fa-file-excel-o" aria-hidden="true" style="color:blue"></i> vs-format.xlsx</h4></a>
                                 </div>
                             </div>
@@ -68,7 +68,7 @@
                     <div class="col-xs-6 col-sm-6">
                         <div class="card">
                             <div class="card-header">
-                                <strong class="card-title">Result</strong>
+                                <h4><strong class="card-title">RESULT</strong></h4>
                             </div>
                             <div id="resultbody" class="card-body">
 

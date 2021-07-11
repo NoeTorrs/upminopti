@@ -28,8 +28,10 @@
         </a>    
     </div> -->
 
+
+
     <div class = "d-flex justify-content-center">
-        <div class="card mt-3 col-9">
+        <div class="card card-dashboard mt-3 col-9">
             <div class="row g-0">
                 <div class="col-md-4 p-0">
                 <img style="width:100%" src="<?=base_url()?>assets/images/vstation.jpg">
@@ -40,7 +42,7 @@
                         <div class = "p-1">
                             <hr class = "m-2"/>
                         </div>
-                        <p class="card-text p-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <p class="card-text p-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p> 
                         <!-- <p class="card-text"><small class="text-muted">Lorem ipsum dolor sit amet</small></p> -->
                         <div class = " mt-auto d-flex align-items-end flex-column">
                             <a class = "btn btn-primary" type = "button" href="<?=base_url()?>Main_C/openvs">PROCEED</a>
@@ -53,7 +55,7 @@
         
 
     <div class = "d-flex justify-content-center">
-        <div class="card mt-3 col-9">
+        <div class="card card-dashboard mt-3 col-9">
             <div class="row g-0">
                 <div class="col-md-4 p-0">
                     <img style="width:100%" src="<?=base_url()?>assets/images/vsched.jpg">

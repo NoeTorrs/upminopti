@@ -1,0 +1,23 @@
+body{
+    background-color: red !important;
+    font-family: 'Montserrat' !important;
+}
+
+/*login shizzz*/
+
+.login-content{
+    background-color: white;
+    border-radius: 10px;
+}
+.login-logo{
+    background-color:rgba(255,255,255,0.10); 
+    margin:0px;
+}
+
+.login-form{
+    border-radius:10px;
+}
+
+.title{
+    color: #00573f;
+}

@@ -2,6 +2,7 @@ body{
 	background-color: rgba(0,0,0,0.09);
 }
 
+
 .map-icon-label .map-icon {
 	font-size: 24px;
 	color: #FFFFFF;
@@ -24,7 +25,7 @@ body{
 	color: #00573f;
 }
 
-.card{
+.card-dashboard{
 	/* background-color: #00573f !important; */
 	/* color:white !important; */
 	/* border-radius: 5%; */
@@ -35,11 +36,11 @@ body{
 	transition: 0.3s;
 }
 
-.card:hover{
+.card-dashboard:hover{
 	box-shadow: 3px 3px 3px rgb(167, 167, 167);
 }
 
-.card .card-text{
+.card-dashboard .card-text{
 	color:rgb(48, 48, 48);
 	/* font-size: 1.2rem; */
 }
