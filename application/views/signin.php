@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>R2N Login</title>
+    <title>AMDABIDSS HEALTH Login</title>
     <meta name="description" content="R2N Login">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -37,7 +37,7 @@
     <div class="sufee-login d-flex align-content-center flex-wrap">
         <div class="container">
             <div class="login-content">
-                <div class="login-logo" style="background-color:rgba(255,255,255,0.10);margin:0px;padding-bottom:5px"> 
+                <div class="login-logo p-2" style="background-color:rgba(255,255,255,0.10);margin:0px;"> 
                     <a href="index.html">
                         <img class="align-content" src="<?=base_url()?>assets/images/logo.png" alt="" style="width:100%">
                     </a>

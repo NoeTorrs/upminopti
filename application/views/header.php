@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AMDABIDSS Health Recommendation System</title>
+    <title>AMDABIDSS HEALTH VACCINATION ROLLOUT</title>
     <meta name="description" content="Recommendation System for Covid-19">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="<?=base_url()?>/assets/css/sweetalert2.min.css">
 </head>
 
-<body style=" font-family: 'Montserrat' !important;font-size: 22px !important;">
+<body style=" font-family: 'Montserrat' !important;">
 
 
     <div id="right-panel" class="right-panel">

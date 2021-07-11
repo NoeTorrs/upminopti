@@ -73,18 +73,32 @@
 				 	table = response['table']
 				 	open = response['open']
 				 	if(open.length>0){
-					 	res+="<button class='btn btn-danger mb-2'>Save as PDF</button>";
+					 	res+="<div class='text-right m-0 p-0'><button class='btn btn-danger mb-2'>Save as PDF</button></div>";
 				 	}
 				 	for(i=0;i<open.length;i++){
 				 		totalcap = 0;
-				 		res+="<h5><strong> Day "+(i+1)+": "+vc+" Vaccine Available </strong></h5>";
+				 		res+="<h5><strong> Day "+(i+1)+": "+vc
+				 		if(vc==1){
+				 			res+=" Vaccine Available </strong></h5>"
+				 		}
+				 		else{
+				 			res+=" Vaccines Available </strong></h5>"
+				 		}
 				 		data = open[i];
 
 				 		console.log(data);
 				 		res += "<table class='table'><thead><th><h6>Vaccine Stations to Open</h6></th></thead><tbody>";
 				 		res += "<tr><td>";
 				 		for(x=0;x<data.length;x++){
-				 			res+=data[x][0]+",";
+				 			if(x<data.length-1 && x!=0){
+				 				res+= ", ";
+				 			}
+				 			else{
+				 				if(x!=0){
+				 					res+=" & ";
+				 				}
+				 			}
+				 			res+=data[x][0];
 				 			totalcap+=parseInt(data[x][1]);
 				 		}
 				 		res += "</td></tr>";
@@ -93,7 +107,7 @@
 				 			vc-=totalcap;
 				 		}
 				 	}
-				 	$txt = `<p>Vaccine name: ${$('#vcn').val()} </p><p>Vaccine Amount: ${$('#vca').val()} doses </p><p>Maximum Duration: ${$('#vcd').val()} days </p>`;
+				 	$txt = `<p class="text-info">Vaccine name: ${$('#vcn').val()} </p><p class="text-info">Vaccine Amount: ${$('#vca').val()} doses </p><p class="text-info">Maximum Duration: ${$('#vcd').val()} days </p>`;
 				 	$txt += "<table class='table table-striped'><thead><th>Vaccine Stations</th><th>Capacity</th></thead><tbody>";
 				 	for(i=0;i<table.length;i++){
 				 		$txt+= "<tr>"
@@ -107,7 +121,7 @@
 				 	$('#resultview').show();
 				 	$('#resultview #body').html($txt);
 				 	$('#resultbtn').show();
-				 	$('#resultbtn').html("<div class='card-body mb-0'><button class='btn btn-primary' id='btngoback'>Go back to Input View</button></div>")
+				 	$('#resultbtn').html("<div class='card-body mb-0 pb-0'><button class='btn btn-primary' id='btngoback'>Go back to Input View</button></div>")
 				 	$('#resultbody').html(res);
 				 }
 				 $('#btnopenvs').html(`PROCESS`);
@@ -127,13 +141,13 @@
 	})
 
 	$(document).on('click','#btngoback',function(){
-		$('#resultbtn').html("<div class='card-body mb-0'><button class='btn btn-primary' id='btngotable'>Go back to Table View</button></div>")
+		$('#resultbtn').html("<div class='card-body mb-0 pb-0'><button class='btn btn-primary' id='btngotable'>Go back to Table View</button></div>")
 		$('#resultview').hide();
 		$('#inputview').show();		 	
 	})
 
 	$(document).on('click','#btngotable',function(){
-		$('#resultbtn').html("<div class='card-body mb-0'><button class='btn btn-primary' id='btngoback'>Go back to Input View</button></div>")
+		$('#resultbtn').html("<div class='card-body mb-0 pb-0'><button class='btn btn-primary' id='btngoback'>Go back to Input View</button></div>")
 		$('#inputview').hide();
 		$('#resultview').show();		 	
 	})

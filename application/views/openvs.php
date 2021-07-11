@@ -20,17 +20,20 @@
                             <div id="inputview">
                             <div class="card-body card-block">
                                 <div>
-                                    <h4><i>Download the Excell File below</i></h4>
-                                   <a href="<?=base_url()?>files/vs-format.xlsx" download style="color:#ffb81c"><h4> <i class="fa fa-file-excel-o" aria-hidden="true" style="color:#ffb81c"></i> vs-format.xlsx</h4></a>
+                                    <h4><strong><i>Download the Template below:</i></strong></h4>
+                                   <a href="<?=base_url()?>files/vs-format.xlsx" download style="color:blue"><h4> <i class="fa fa-file-excel-o" aria-hidden="true" style="color:blue"></i> vs-format.xlsx</h4></a>
                                 </div>
                             </div>
-                            <hr/>
-                            <div class="card-body card-block">
+                            <div class="card-body card-block pt-0">
                                 <form id="openvsform" method="POST" enctype="multipart/form-data">
                                  <div class="form-group">
-                                    <label class=" form-control-label">Vaccine Name:</label>
+                                    <label class=" form-control-label">Vaccine Type:</label>
                                     <div class="input-group">
-                                        <input class="form-control" id="vcn" name="vaccinename" type="text" required>
+                                        <select class="form-control" id="vcn" name="vaccinename" type="text" required>
+                                            <option value="Pfizer">Pfizer</option>
+                                            <option value="Sinovac">Sinovac</option>
+                                            <option value="Moderna">Moderna</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group">

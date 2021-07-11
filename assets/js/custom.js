@@ -64,10 +64,10 @@ var myStyles =[
             $('.step1').show();
         }
         else{
-            getCriteria();
-            $('#btnNext').show();
             $('#btnShowResult').hide();
-            createAHP('#ahpdiv');
+            $('.fileup').hide();
+            $(".ahp").show();
+            $('#btnNext').show();
         }
     });
     $(document).on('click','#btnChange',function(){
@@ -100,7 +100,7 @@ var myStyles =[
                         <h5>Day 1</h5>
                     </div>
                     <div class="col-4 text-right">
-                        <h5><a href="" style="color:blue">Next Day</a></h5>
+                        <h5><a style="color:blue">Next Day</a></h5>
                     </div>
                   </div>`;
         $text+=`<table class="table">
@@ -315,43 +315,6 @@ var myStyles =[
         counter+=1;
         console.log(counter);
         getCriteria();
-        // $chose = $("[name=ahpoption]:checked").val();
-        // crit=[];
-        // if($("#criteriaselect").val()){
-        //  crit = $("#criteriaselect").val();  
-        // }
-        // $date = $("#startDate").val();
-        // $vaccine = $("#vaccineselect").val();
-        // $vnumber = $("#vaccineno").val();
-        // $now = new Date().toISOString().slice(0, 10);
-        // $approve = 0;
-        // if($vnumber<1){
-        //  $("#vnerror").html("<span style='color:red'>Error: Vacccine amount must be greater than 0.</span>");
-        // }
-        // else{
-        //  $("#vnerror").html('');
-        //  $approve+=1;
-        // }
-        // if($date==""){
-        //  $("#sderror").html("<span style='color:red'>Error: Pls choose a date.</span>");
-        // }
-        // else if($date<$now){
-        //  $("#sderror").html("<span style='color:red'>Error: Pls input only today or greater than today.</span>");    
-        // }
-        // else{
-        //  $("#sderror").html('');
-        //  $approve+=1;
-        // }
-        // if(crit==null && $chose=="Custom"){
-        //  $("#scerror").html("<span style='color:red'>Error: Minimum of 3 Criteria Required.</span>");
-        // }
-        // else if(crit.length<3 && $chose=="Custom"){
-        //  $("#scerror").html("<span style='color:red'>Error: Minimum of 3 Criteria Required.</span>");
-        // }
-        // else{
-        //  $("#scerror").html('');
-        //  $approve+=1;        
-        // }
         if(counter==1){
             $("#scerror").html('');
             $("#sderror").html('');
@@ -382,7 +345,7 @@ var myStyles =[
         }
     });
     function getCriteria(){
-        crit=["Barangay Level","Number of Cases","Density"];
+        crit=["Distance","Number of Cases","Density"];
         $('#ahptitle').html(`<h5>Step 2: AHP </h5>`);
     }
     function createAHP(id){
@@ -435,6 +398,6 @@ var myStyles =[
     }
     $(document).on('change','#ahp1',function(){
             createAHP("#ahpdiv");
-        $("#btnahpEdit").show();
+        // $("#btnahpEdit").show();
     })
 })(jQuery);

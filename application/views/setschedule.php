@@ -56,19 +56,19 @@
                                     </div>
                                 </div>
                                 <div class="input-group" style="margin-top:10px">
-                                    <div class="col-5"><label>Type of available vaccine:</label></div>
+                                    <div class="col-5"><label>Vaccine Type:</label></div>
                                     <div class="col-7">
                                         <select id="vaccineselect" class="form-control">
-                                        <?php foreach($vaccine as $v): ?>
-                                            <option value="<?=$v->vaccine_name?>"><?=$v->vaccine_name?></option>
-                                        <?php endforeach; ?>
+                                        <option value="Pfizer">Pfizer</option>
+                                            <option value="Sinovac">Sinovac</option>
+                                            <option value="Moderna">Moderna</option>
                                     </select></div>
                                     <div class="col-12" id="vcerror"></div>
                                 </div>
                                 <div class="input-group" style="margin-top:10px">
-                                    <div class="col-5"><label>Amount of available vaccines:</label></div>
+                                    <div class="col-5"><label>Available Amount:</label></div>
                                     <div class="col-7">
-                                        <input type="number" id="vaccineno" value=0 class="form-control"/>
+                                        <input type="number" id="vaccineno" min=1 class="form-control"/>
                                     </div>
                                     <div class="col-12" id="vnerror"></div>
                                 </div>
@@ -83,16 +83,24 @@
 
                                 <div class="fileup" style="display:none">  
                                     <div class="text-center" id="uploadfile">
-                                        <h5>Upload Excell File</h5>
-                                        <span style="color:red">Reminder! Make Sure the format of the excell file is correct</span>
+                                        <h5>Upload Excel File</h5>
+                                        <span style="color:red">Reminder! Make Sure the format of the excel file is correct</span>
                                     </div>
                                     <div>
-                                                <hr>
-                                            <p>Download the file below for the format:</p>
-                                            <a href="<?=base_url()?>files/people-format.xlsx" download style="color:blue">people-format.xlsx</a>
                                             <hr>
-                                            <h6>Upload File:</h6>
-                                            <input type="file" name="">    
+                                            <p class="text-dark"><strong>Download the templates below for the format:</strong></p>
+                                            <a class="mb-1" href="<?=base_url()?>files/people-format.xlsx" download style="color:blue"><i class="fa fa-file-excel-o" aria-hidden="true" style="color:blue"></i> people-format.xlsx</a>
+                                            <br>
+                                            <a class="mb-1" href="<?=base_url()?>files/vs-format.xlsx" download style="color:blue"><i class="fa fa-file-excel-o" aria-hidden="true" style="color:blue"></i> vs-format.xlsx</a>
+                                            <hr>
+                                            <div class="mb-2">
+                                                <h6 class="mb-1"><strong>Upload File for Individuals Masterlist:</strong></h6>
+                                                <input type="file" name=""> 
+                                            </div>
+                                            <div>
+                                                <h6 class="mb-1"><strong>Upload File for Vaccine Stations Masterlist:</strong></h6>
+                                                <input type="file" name=""> 
+                                            </div>  
                                     </div>
                                 </div>
                             </div>
