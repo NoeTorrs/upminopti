@@ -66,7 +66,7 @@
                 <div class="col-md-1 col-sm-12 d-flex justify-content-center">
                     <div class="user-area dropdown loat-right">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="<?=base_url()?>/assets/images/admin.jpg" alt="User Avatar" style="width:70%">
+                            <img class="user-avatar rounded-circle" src="<?=base_url()?>/assets/images/avatar/admin.jpg" alt="User Avatar" style="width:70%">
                         </a>
 
                         <div class="user-menu dropdown-menu">
