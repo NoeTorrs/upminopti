@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="apple-icon.png">
-    <link rel="shortcut icon" href="<?=base_url()?>assets/images/logo-b.png">
+    <link rel="shortcut icon" href="<?=base_url()?>assets/images/favicon.ico">
 
     <link rel="stylesheet" href="<?=base_url()?>/assets/vendors/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?=base_url()?>/assets/vendors/font-awesome/css/font-awesome.min.css">
