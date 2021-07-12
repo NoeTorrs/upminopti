@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AMDABIDSS HEALTH Login</title>
+    <title>AMDABiDSS HEALTH Login</title>
     <meta name="description" content="AMDABiDSS-HEALTH">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -37,7 +37,7 @@
                     <a>
                         <img class="align-content" src="<?=base_url()?>assets/images/logo.png" alt="" style="width:100%">
                     </a>
-                    <h2 class = "title"><strong>AMDABIDSS-HEALTH</strong></h2>
+                    <h2 class = "title"><strong>AMDABiDSS-HEALTH</strong></h2>
                     <hr>
                 </div>
                 <div class="login-form pt-1">

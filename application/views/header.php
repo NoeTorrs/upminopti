@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AMDABIDSS HEALTH VACCINATION ROLLOUT</title>
+    <title>AMDABiDSS HEALTH VACCINATION ROLLOUT</title>
     <meta name="description" content="Recommendation System for Covid-19">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -55,7 +55,7 @@
                         </div>
                         <div class="text-center col-sm-12 col-md-8">
                             <h2>
-                                <strong>AMDABIDSS Health</strong> Vaccination Rollout 
+                                <strong>AMDABiDSS Health</strong> Vaccination Rollout 
                             </h2>
                             <span>Decision Support System</span>
                         </div>

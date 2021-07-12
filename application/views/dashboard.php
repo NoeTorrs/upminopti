@@ -38,11 +38,11 @@
                 </div>
                 <div class="col-md-8">
                     <div class="card-body d-flex flex-column" style = "height:100%;">
-                        <h3 class="card-title p-2 m-0">OPEN VACCINE STATION</h3>
+                        <h3 class="card-title p-2 m-0"><strong>OPEN VACCINE STATIONS</strong></h3>
                         <div class = "p-1">
                             <hr class = "m-2"/>
                         </div>
-                        <p class="card-text p-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p> 
+                        <h3 class="card-text p-2">“Where to open?”</h3> 
                         <!-- <p class="card-text"><small class="text-muted">Lorem ipsum dolor sit amet</small></p> -->
                         <div class = " mt-auto d-flex align-items-end flex-column">
                             <a class = "btn btn-primary" type = "button" href="<?=base_url()?>Main_C/openvs">PROCEED</a>
@@ -62,11 +62,11 @@
                 </div>
                 <div class="col-md-8">
                     <div class="card-body d-flex flex-column" style = "height:100%;">
-                        <h3 class="card-title p-2 m-0">CREATE VACCINE SCHEDULE</h3>
+                        <h3 class="card-title p-2 m-0"><strong>CREATE VACCINE SCHEDULE</strong></h3>
                         <div class = "p-1">
                             <hr class = "m-2"/>
                         </div>
-                        <p class="card-text p-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <h3 class="card-text p-2">“Who, when and where?”</h3>
                         <!-- <p class="card-text"><small class="text-muted">Lorem ipsum dolor sit amet</small></p> -->
                         <div class = " mt-auto d-flex align-items-end flex-column">
                             <a class = "btn btn-primary" type = "button" href="<?=base_url()?>Main_C/setsched">PROCEED</a>
