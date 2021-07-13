@@ -66,7 +66,7 @@
                                     <div class="col-12" id="vcerror"></div>
                                 </div>
                                 <div class="input-group" style="margin-top:10px">
-                                    <div class="col-5"><label>Available Amount:</label></div>
+                                    <div class="col-5"><label>Total # of Available Vaccines:</label></div>
                                     <div class="col-7">
                                         <input type="number" id="vaccineno" min=1 class="form-control"/>
                                     </div>
